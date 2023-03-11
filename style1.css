@@ -1,0 +1,129 @@
+:root {
+  font-size: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+}
+
+main {
+  background-color: #71c9ce;
+  color: #e3fdfd;
+}
+
+nav {
+  position: relative;
+  z-index: 4;
+  color: #476667;
+}
+
+nav > ul {
+  position: fixed;
+  transform: rotate(-90deg);
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  bottom: 50vh;
+  left: -12%;
+}
+
+nav > ul::before {
+  content: '';
+  position: absolute;
+  background-color: #476667;
+  height: 100vh;
+  width: 1vw;
+  bottom: -48vh;
+  left: -45vw;
+  transform: rotate(90deg);
+}
+
+nav > a {
+  position: fixed;
+  transform: rotate(-90deg);
+  bottom: 40vh;
+  right: -12%;
+}
+
+nav > a::before {
+  content: '';
+  position: absolute;
+  background-color: #476667;
+  height: 100vh;
+  width: 1vw;
+  bottom: -48vh;
+  left: -45vw;
+  transform: rotate(90deg);
+}
+
+/* ---LANDING---- */
+#landing {
+  height: 100vh;
+  position: relative;
+}
+
+#landing::before {
+  content: '';
+  display: block;
+  height: 100vh;
+  width: 50vw;
+  background-color: #cbf1f5;
+}
+
+#landing::after {
+  content: '';
+  position: absolute;
+  height: 100vh;
+  width: 50vw;
+  right: 0;
+  top: 0;
+  background-color: #a6e3e9;
+}
+
+#landing > .text {
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  transform: translateX(-100%);
+  z-index: 3;
+}
+
+#landing > .text > h1 {
+  position: relative;
+  top: 0;
+  z-index: 3;
+  color: #71c9ce;
+  text-transform: uppercase;
+  font-size: 4rem;
+}
+
+#landing > .text > h1 > span:nth-of-type(1) {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+#landing > .text > h1 > span:nth-of-type(2) {
+  position: absolute;
+}
+#landing > .text > h1 > span:nth-of-type(3) {
+  position: absolute;
+  top: 30%;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+#landing > .text > h1 > span:nth-of-type(4) {
+  position: absolute;
+  top: 30%;
+  right: -25vw;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+#landing > .text > h1 > span:nth-of-type(5) {
+  position: absolute;
+  bottom: 0;
+}
