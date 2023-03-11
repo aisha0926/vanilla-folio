@@ -9,70 +9,80 @@
 }
 
 .container {
-  position: relative;
-}
-
-main {
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
   background-color: #71c9ce;
   color: #e3fdfd;
+  font-family: 'Roboto', sans-serif;
 }
 
-nav {
+nav,
+footer {
   position: relative;
-  z-index: 4;
+}
+
+nav > div {
+  position: fixed;
+  bottom: 45%;
+  z-index: 3;
+  left: 2%;
+}
+
+nav > div > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+}
+nav > div > ul::before {
+  content: '';
+  position: absolute;
+  background-color: #476667;
+  height: 100vh;
+  width: 1vw;
+  left: 40%;
+  bottom: -110vh;
+}
+
+nav > div > ul > li {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
   color: #476667;
 }
 
-nav > ul {
-  position: fixed;
-  transform: rotate(-90deg);
-  display: flex;
-  gap: 20px;
-  list-style-type: none;
-  bottom: 50vh;
-  left: -12%;
-}
-
-nav > ul::before {
-  content: '';
-  position: absolute;
-  background-color: #476667;
-  height: 100vh;
-  width: 1vw;
-  bottom: -48vh;
-  left: -45vw;
-  transform: rotate(90deg);
-}
-
-nav > a {
-  position: fixed;
-  transform: rotate(-90deg);
-  bottom: 40vh;
-  right: -12%;
-}
-
-nav > a::before {
-  content: '';
-  position: absolute;
-  background-color: #476667;
-  height: 100vh;
-  width: 1vw;
-  bottom: -48vh;
-  left: -45vw;
-  transform: rotate(90deg);
-}
-
-/* ---LANDING---- */
+/* LANDING */
 #landing {
-  height: 100vh;
   position: relative;
+  height: 100vh;
+}
+
+#landing > .brand > h1 {
+  position: absolute;
+  font-size: 4rem;
+  z-index: 4;
+  right: -2.2%;
+  top: 5%;
+  font-weight: 100;
+}
+
+#landing > .brand > h1:nth-of-type(2) {
+  position: absolute;
+  font-size: 4rem;
+
+  right: 1%;
+  top: 1%;
+  transform: rotate(180deg);
+  /* color: #a6e3e9; */
 }
 
 #landing::before {
   content: '';
-  display: block;
+  position: absolute;
   height: 100vh;
-  width: 50vw;
+  width: 54vw;
+  z-index: 2;
+  left: -10%;
   background-color: #cbf1f5;
 }
 
@@ -80,27 +90,29 @@ nav > a::before {
   content: '';
   position: absolute;
   height: 100vh;
-  width: 50vw;
-  right: 0;
+  width: 54vw;
+  right: -10%;
   top: 0;
   background-color: #a6e3e9;
 }
 
 #landing > .text {
-  position: absolute;
-  top: 10%;
-  left: 40%;
-  transform: translateX(-100%);
-  z-index: 3;
+  position: relative;
+  z-index: 4;
+  color: #71c9ce;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  max-width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
 
 #landing > .text > h1 {
-  position: relative;
-  top: 0;
-  z-index: 3;
-  color: #71c9ce;
-  text-transform: uppercase;
-  font-size: 4rem;
+  display: flex;
+  height: 100%;
+  align-items: center;
 }
 
 #landing > .text > h1 > span:nth-of-type(1) {
@@ -108,22 +120,58 @@ nav > a::before {
   text-orientation: upright;
 }
 #landing > .text > h1 > span:nth-of-type(2) {
-  position: absolute;
+  writing-mode: vertical-rl;
+
+  text-orientation: mixed;
 }
 #landing > .text > h1 > span:nth-of-type(3) {
-  position: absolute;
-  top: 30%;
+  text-orientation: mixed;
+
+  writing-mode: vertical-rl;
+}
+#landing > .text > h1 > span:nth-of-type(4) {
   writing-mode: vertical-rl;
   text-orientation: mixed;
 }
-#landing > .text > h1 > span:nth-of-type(4) {
-  position: absolute;
-  top: 30%;
-  right: -25vw;
+#landing > .text > h1 > span:nth-of-type(5) {
   writing-mode: vertical-rl;
   text-orientation: upright;
 }
-#landing > .text > h1 > span:nth-of-type(5) {
+
+#landing > .text > .links {
   position: absolute;
-  bottom: 0;
+  bottom: 5%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* FOOTER */
+footer > div {
+  position: fixed;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  top: 40%;
+}
+
+footer > div::before {
+  content: '';
+  position: absolute;
+  background-color: #476667;
+  height: 100vh;
+  width: 1vw;
+  left: 40%;
+  bottom: -105vh;
+}
+
+footer > div > a {
+  text-decoration: none;
+  color: #476667;
+}
+
+/* MEDIA */
+@media screen and (min-width: 768px) {
+  #landing > .text {
+    font-size: 5rem;
+  }
 }
